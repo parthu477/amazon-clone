@@ -1,0 +1,96 @@
+.amazon-subnav {
+  width: 100%;
+  background-color: var(--amazon-nav-secondary);
+  color: #ffffff;
+  font-size: 0.85rem;
+  overflow-x: auto;
+  scrollbar-width: none; /* Firefox */
+}
+
+.amazon-subnav::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+.subnav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  max-width: 1600px;
+  margin: 0 auto;
+  white-space: nowrap;
+}
+
+.subnav-links {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.subnav-item {
+  color: #ffffff;
+  padding: 0.45rem 0.65rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.85rem;
+  transition: border-color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.subnav-item:hover {
+  border-color: #ffffff;
+}
+
+.subnav-item.active {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.4);
+  font-weight: 600;
+}
+
+.subnav-all-btn {
+  font-weight: 700;
+  margin-right: 0.4rem;
+}
+
+.deal-link {
+  color: #febd69;
+  font-weight: 600;
+}
+
+.deal-icon {
+  color: #febd69;
+}
+
+.subnav-prime-banner {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  color: #e6f4ea;
+  padding: 0.3rem 0.5rem;
+}
+
+.subnav-prime-tag {
+  background: var(--amazon-prime-blue);
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 800;
+  font-style: italic;
+  padding: 0.1rem 0.35rem;
+  border-radius: 2px;
+}
+
+@media (max-width: 1024px) {
+  .hide-on-tablet,
+  .subnav-prime-banner {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .hide-on-mobile {
+    display: none;
+  }
+}

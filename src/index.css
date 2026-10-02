@@ -1,0 +1,315 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --amazon-nav: #131921;
+  --amazon-nav-secondary: #232f3e;
+  --amazon-yellow: #ffd814;
+  --amazon-yellow-hover: #f7ca00;
+  --amazon-orange: #febd69;
+  --amazon-orange-hover: #f3a847;
+  --amazon-orange-btn: #ffa41c;
+  --amazon-orange-btn-hover: #fa8900;
+  --amazon-blue-link: #007185;
+  --amazon-blue-hover: #c7511f;
+  --amazon-prime-blue: #00a8e1;
+  --amazon-deal-red: #cc0c39;
+  --amazon-deal-red-bg: #ffe4e6;
+  --amazon-green: #067d62;
+  --amazon-green-bg: #e6f4ea;
+  --amazon-bg: #eaeded;
+  --amazon-card-bg: #ffffff;
+  --amazon-text-main: #0f1111;
+  --amazon-text-muted: #565959;
+  --amazon-border: #d5d9d9;
+  --amazon-border-focus: #e77600;
+  --amazon-star: #de7921;
+  
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+  --shadow-card-hover: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-full: 9999px;
+
+  --transition-fast: 0.15s ease-in-out;
+  --transition-normal: 0.25s ease-in-out;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-sans);
+  color: var(--amazon-text-main);
+  background-color: var(--amazon-bg);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}
+
+a {
+  color: var(--amazon-blue-link);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--amazon-blue-hover);
+  text-decoration: underline;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* Amazon Buttons */
+.btn-primary {
+  background-color: var(--amazon-yellow);
+  color: #0f1111;
+  border: 1px solid #fcd200;
+  border-radius: var(--radius-full);
+  padding: 0.55rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  box-shadow: 0 2px 5px rgba(213, 217, 217, 0.5);
+  transition: background-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: var(--amazon-yellow-hover);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.btn-primary:disabled {
+  background-color: #f0f2f2;
+  color: #a6a6a6;
+  border-color: #d5d9d9;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.btn-secondary {
+  background-color: #ffffff;
+  color: var(--amazon-text-main);
+  border: 1px solid var(--amazon-border);
+  border-radius: var(--radius-full);
+  padding: 0.5rem 1.15rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  box-shadow: 0 2px 5px rgba(213, 217, 217, 0.4);
+  transition: background-color var(--transition-fast), border-color var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background-color: #f7fafa;
+  border-color: #d5d9d9;
+}
+
+.btn-orange {
+  background-color: var(--amazon-orange-btn);
+  color: #0f1111;
+  border: 1px solid #ff9900;
+  border-radius: var(--radius-full);
+  padding: 0.55rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  box-shadow: 0 2px 5px rgba(213, 217, 217, 0.5);
+  transition: background-color var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.btn-orange:hover:not(:disabled) {
+  background-color: var(--amazon-orange-btn-hover);
+}
+
+/* Amazon Badges */
+.badge-deal {
+  background-color: var(--amazon-deal-red);
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.2rem 0.45rem;
+  border-radius: 2px;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.badge-best-seller {
+  background-color: #e67a00;
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.2rem 0.5rem;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  display: inline-block;
+}
+
+.badge-choice {
+  background-color: #232f3e;
+  color: #ffffff;
+  font-size: 0.72rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 2px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+.badge-choice span {
+  color: #febd69;
+  font-weight: 700;
+}
+
+.badge-prime {
+  color: var(--amazon-prime-blue);
+  font-weight: 800;
+  font-style: italic;
+  font-size: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  letter-spacing: -0.5px;
+}
+
+.badge-prime::before {
+  content: '✓';
+  color: #ff9900;
+  margin-right: 2px;
+  font-weight: 900;
+}
+
+/* Price formatting */
+.price-display {
+  display: inline-flex;
+  align-items: flex-start;
+  color: var(--amazon-text-main);
+  font-weight: 600;
+  line-height: 1;
+}
+
+.price-currency {
+  font-size: 0.65em;
+  margin-top: 0.15em;
+  font-weight: 500;
+}
+
+.price-whole {
+  font-size: 1.5em;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.price-fraction {
+  font-size: 0.65em;
+  margin-top: 0.15em;
+  font-weight: 600;
+}
+
+.price-original {
+  color: var(--amazon-text-muted);
+  text-decoration: line-through;
+  font-size: 0.85rem;
+  margin-left: 0.5rem;
+  font-weight: 400;
+}
+
+/* Stock status tags */
+.in-stock {
+  color: var(--amazon-green);
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.out-of-stock {
+  color: var(--amazon-deal-red);
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+/* Star rating styles */
+.star-rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  color: var(--amazon-star);
+  font-size: 0.9rem;
+}
+
+/* Visually Hidden Utility for Accessibility */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Global Container */
+.main-container {
+  max-width: 1520px;
+  margin: 0 auto;
+  padding: 0 1.25rem 3rem;
+  width: 100%;
+}
